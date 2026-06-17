@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India - Negeri Seribu Warna</title>
+  <link rel="stylesheet" href="css/index.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">🇮🇳 INDIA</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html" class="active">Beranda</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="budaya.html">Budaya</a>
+        <a href="kuliner.html">Kuliner</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="#footer">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <p class="hero-sub animate-fadein">Selamat Datang di</p>
+      <h1 class="hero-title animate-slidein">INDIA</h1>
+      <p class="hero-desc animate-fadein-delay">Negeri Seribu Warna, Sejuta Cerita</p>
+      <a href="sejarah.html" class="btn-hero animate-fadein-delay2">Jelajahi Sejarah</a>
+    </div>
+    <div class="hero-scroll-hint">↓ Scroll</div>
+  </section>
+
+  <section class="intro">
+    <div class="container">
+      <div class="intro-grid">
+        <div class="intro-text">
+          <h2>Tentang India</h2>
+          <p>India, secara resmi dikenal sebagai <strong>Republik India</strong>, adalah negara terbesar ketujuh di dunia berdasarkan luas wilayah dan terbesar kedua berdasarkan jumlah penduduk. Terletak di Asia Selatan, India berbatasan dengan Pakistan, Cina, Nepal, Bhutan, Bangladesh, dan Myanmar.</p>
+          <p>Dengan populasi lebih dari <strong>1,4 miliar jiwa</strong>, India adalah rumah bagi keberagaman budaya, bahasa, agama, dan tradisi yang luar biasa kaya.</p>
+          <ul class="fact-list">
+            <li>🏛️ Ibu Kota: <strong>New Delhi</strong></li>
+            <li>🗣️ Bahasa Resmi: <strong>Hindi & Inggris</strong></li>
+            <li>💰 Mata Uang: <strong>Rupee India (₹)</strong></li>
+            <li>👥 Populasi: <strong>~1,44 Miliar</strong></li>
+            <li>📐 Luas Wilayah: <strong>3,29 Juta km²</strong></li>
+            <li>🕌 Agama Utama: <strong>Hindu, Islam, Kristen, Sikh</strong></li>
+          </ul>
+        </div>
+        <div class="intro-img">
+          <img src="img/map.jpg" alt="Peta India" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="highlights">
+    <div class="container">
+      <h2 class="section-title">Kenapa India Menakjubkan?</h2>
+      <div class="cards-grid">
+        <div class="card" onclick="toggleCard(this)">
+          <div class="card-icon">&#127983;</div>
+          <h3>Warisan Sejarah</h3>
+          <p>Dari Taj Mahal hingga kuil-kuil kuno, India menyimpan ribuan situs bersejarah yang menakjubkan. Peradaban Lembah Indus adalah salah satu peradaban tertua di dunia.</p>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+          <div class="card-icon">&#127917;</div>
+          <h3>Budaya Beragam</h3>
+          <p>India adalah rumah bagi lebih dari 2.000 kelompok etnis dan lebih dari 1.600 bahasa yang digunakan di seluruh penjuru negeri.</p>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+          <div class="card-icon">&#127835;</div>
+          <h3>Kuliner Kaya Rasa</h3>
+          <p>Masakan India dikenal dengan penggunaan rempah-rempah yang kaya, warna-warni cerah, dan cita rasa yang kompleks dari setiap daerah.</p>
+        </div>
+        <div class="card" onclick="toggleCard(this)">
+          <div class="card-icon">&#127748;</div>
+          <h3>Keindahan Alam</h3>
+          <p>Dari Pegunungan Himalaya di utara hingga pantai tropis di selatan, India menawarkan lanskap alam yang luar biasa beragam.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wisata">
+    <div class="container">
+      <h2 class="section-title">Destinasi Wisata Ikonik</h2>
+      <div class="wisata-flex">
+        <div class="wisata-item">
+          <img src="img/taj mahal.jpeg" alt="Taj Mahal" />
+          <div class="wisata-info">
+            <h4>Taj Mahal</h4>
+            <p>Agra, Uttar Pradesh</p>
+          </div>
+        </div>
+        <div class="wisata-item">
+          <img src="img/lotus temple.jpeg" alt="Lotus Temple" />
+          <div class="wisata-info">
+            <h4>Lotus Temple</h4>
+            <p>New Delhi</p>
+          </div>
+        </div>
+        <div class="wisata-item">
+          <img src="img/hawa mahal.jpeg" alt="Hawa Mahal" />
+          <div class="wisata-info">
+            <h4>Hawa Mahal</h4>
+            <p>Jaipur, Rajasthan</p>
+          </div>
+        </div>
+        <div class="wisata-item">
+          <img src="img/kerala backwaters.jpeg" alt="Kerala" />
+          <div class="wisata-info">
+            <h4>Kerala Backwaters</h4>
+            <p>Kerala</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="newsletter">
+    <div class="container">
+      <h2>Tetap Update tentang India</h2>
+      <p>Daftarkan email kamu untuk mendapatkan informasi terbaru seputar India!</p>
+      <form class="nl-form" onsubmit="handleSubscribe(event)">
+        <input type="text" id="nlName" placeholder="Nama kamu..." required />
+        <input type="email" id="nlEmail" placeholder="Email kamu..." required />
+        <button type="submit" class="btn-submit">Daftar Sekarang</button>
+      </form>
+      <p id="nl-msg" class="nl-msg"></p>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Pembuat</h4>
+        <p>Jason Manuel Simadibrata <br> Reginald Cristoval Surya Pratama <br> Varrel Imannuel Sinaij
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>NRP</h4>
+        <p>2572020 <br> 2572034 <br> 2572040</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 Web Dasar India</p>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('open');
+    });
+
+    function handleSubscribe(e) {
+      e.preventDefault();
+      const name = document.getElementById('nlName').value.trim();
+      const email = document.getElementById('nlEmail').value.trim();
+      const msg = document.getElementById('nl-msg');
+      if (name && email) {
+        msg.textContent = `Terima kasih, ${name}! Kamu sudah terdaftar dengan email ${email}.`;
+        msg.style.color = '#f5c518';
+        e.target.reset();
+      } else {
+        msg.textContent = 'Mohon isi semua field!';
+        msg.style.color = '#ff6b6b';
+      }
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.card, .wisata-item, .intro-grid').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

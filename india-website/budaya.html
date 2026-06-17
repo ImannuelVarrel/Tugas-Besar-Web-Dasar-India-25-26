@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Budaya India</title>
+  <link rel="stylesheet" href="css/budaya.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">🇮🇳 INDIA</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Beranda</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="budaya.html" class="active">Budaya</a>
+        <a href="kuliner.html">Kuliner</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="#footer">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="mandala-bg"></div>
+    <div class="page-hero-content">
+      <h1>BUDAYA INDIA</h1>
+      <p>Mozaik Seni, Tradisi & Kehidupan yang Tak Tertandingi</p>
+    </div>
+  </section>
+
+  <section class="filter-section">
+    <div class="container">
+      <h2 class="section-title">Jelajahi Budaya India</h2>
+      <div class="filter-bar">
+        <label for="kategori">Pilih Kategori:</label>
+        <select id="kategori" onchange="filterBudaya(this.value)">
+          <option value="all">Semua Kategori</option>
+          <option value="tari">Tarian</option>
+          <option value="festival">Festival</option>
+          <option value="seni">Seni & Kerajinan</option>
+          <option value="pakaian">Pakaian</option>
+        </select>
+      </div>
+
+      <div class="budaya-grid" id="budayaGrid">
+
+        <div class="budaya-card" data-cat="tari">
+          <div class="card-img-wrap">
+            <img src="img/bharatanatyam.jpeg" alt="Bharatanatyam" />
+            <span class="card-tag">Tarian</span>
+          </div>
+          <div class="card-body">
+            <h3>Bharatanatyam</h3>
+            <p>Tarian klasik tertua dari Tamil Nadu, India Selatan. Dikenal dengan ekspresi wajah (abhinaya) dan gerakan kaki yang ritmis.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="tari">
+          <div class="card-img-wrap">
+            <img src="img/Odissi.jpeg" alt="Odissi" />
+            <span class="card-tag">Tarian</span>
+          </div>
+          <div class="card-body">
+            <h3>Odissi</h3>
+            <p>Tarian klasik dari Odisha dengan gerakan yang lembut dan mengalir, terinspirasi dari ukiran kuil-kuil kuno.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="tari">
+          <div class="card-img-wrap">
+            <img src="img/kathak.jpeg" alt="Kathak" />
+            <span class="card-tag">Tarian</span>
+          </div>
+          <div class="card-body">
+            <h3>Kathak</h3>
+            <p>Tarian klasik dari India Utara yang menggabungkan gerakan berputar, hentakan kaki (tatkar), dan ekspresi naratif.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="festival">
+          <div class="card-img-wrap">
+            <img src="img/diwali.jpeg" alt="Diwali" />
+            <span class="card-tag festival-tag">Festival</span>
+          </div>
+          <div class="card-body">
+            <h3>Diwali</h3>
+            <p>Festival Cahaya terbesar di India, dirayakan dengan lampu diya, kembang api, dan pertukaran hadiah. Melambangkan kemenangan cahaya atas kegelapan.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="festival">
+          <div class="card-img-wrap">
+            <img src="img/holi.jpeg" alt="Holi" />
+            <span class="card-tag festival-tag">Festival</span>
+          </div>
+          <div class="card-body">
+            <h3>Holi</h3>
+            <p>Festival Warna yang meriah, merayakan datangnya musim semi dan kemenangan kebaikan. Ditandai dengan saling lempar bubuk warna-warni.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="festival">
+          <div class="card-img-wrap">
+            <img src="img/durga puja.jpeg" alt="Durga Puja" />
+            <span class="card-tag festival-tag">Festival</span>
+          </div>
+          <div class="card-body">
+            <h3>Durga Puja</h3>
+            <p>Festival 10 hari di Bengal Barat untuk memuja dewi Durga. Ditandai dengan patung-patung megah dan pertunjukan seni budaya.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="seni">
+          <div class="card-img-wrap">
+            <img src="img/madhubani.jpeg" alt="Madhubani" />
+            <span class="card-tag seni-tag">Seni</span>
+          </div>
+          <div class="card-body">
+            <h3>Lukisan Madhubani</h3>
+            <p>Seni lukis tradisional dari Bihar menggunakan motif alam, dewa-dewa, dan geometri. Biasa dilukis pada dinding rumah untuk upacara khusus.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="seni">
+          <div class="card-img-wrap">
+            <img src="img/ukiran kayu.jpeg" alt="Kerajinan Kayu" />
+            <span class="card-tag seni-tag">Seni</span>
+          </div>
+          <div class="card-body">
+            <h3>Ukiran Kayu</h3>
+            <p>Tradisi ukiran kayu India berasal ribuan tahun, terlihat indah di kuil, keraton, dan artefak rumah tangga dari berbagai daerah.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="pakaian">
+          <div class="card-img-wrap">
+            <img src="img/sharee.jpeg" alt="Saree" />
+            <span class="card-tag pakaian-tag">Pakaian</span>
+          </div>
+          <div class="card-body">
+            <h3>Saree</h3>
+            <p>Pakaian tradisional wanita India berupa selembar kain panjang (5-9 meter) yang dibalut dengan cara berbeda di tiap daerah. Simbol keanggunan India.</p>
+          </div>
+        </div>
+
+        <div class="budaya-card" data-cat="pakaian">
+          <div class="card-img-wrap">
+            <img src="img/sherwani.jpeg" alt="Sherwani" />
+            <span class="card-tag pakaian-tag">Pakaian</span>
+          </div>
+          <div class="card-body">
+            <h3>Sherwani</h3>
+            <p>Pakaian formal pria India berupa jubah panjang yang elegan, biasa dipakai saat pernikahan dan upacara penting.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="agama-section">
+    <div class="container">
+      <h2 class="section-title">Keragaman Agama India</h2>
+      <div class="agama-flex">
+        <div class="agama-item">
+          <div class="agama-icon">🕉️</div>
+          <h4>Hindu</h4>
+          <p>~80% penduduk India memeluk Hindu, menjadikan India sebagai negara dengan populasi Hindu terbesar di dunia.</p>
+        </div>
+        <div class="agama-item">
+          <div class="agama-icon">☪️</div>
+          <h4>Islam</h4>
+          <p>~14% penduduk India beragama Islam, menjadikan India rumah bagi komunitas Muslim terbesar ketiga di dunia.</p>
+        </div>
+        <div class="agama-item">
+          <div class="agama-icon">✝️</div>
+          <h4>Kristen</h4>
+          <p>Kristen masuk ke India sejak abad ke-1 M melalui Thomas Rasul. Kini sekitar 2,3% penduduk beragama Kristen.</p>
+        </div>
+        <div class="agama-item">
+          <div class="agama-icon">☬</div>
+          <h4>Sikh</h4>
+          <p>Sikhisme lahir di Punjab pada abad ke-15. Ditandai dengan turban dan nilai-nilai kebersamaan, keberanian dan pelayanan.</p>
+        </div>
+        <div class="agama-item">
+          <div class="agama-icon">☸️</div>
+          <h4>Buddha</h4>
+          <p>Agama Buddha lahir di India melalui Siddhartha Gautama (Buddha). Meski minoritas di India kini, pengaruhnya menyebar ke seluruh Asia.</p>
+        </div>
+        <div class="agama-item">
+          <div class="agama-icon">🔆</div>
+          <h4>Jainisme</h4>
+          <p>Salah satu agama paling damai di dunia, Jainisme menekankan non-kekerasan (ahimsa) terhadap semua makhluk hidup.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bahasa-section">
+    <div class="container">
+      <h2 class="section-title">Bahasa-Bahasa India</h2>
+      <p class="bahasa-intro">India memiliki lebih dari <strong>1.600 bahasa</strong> yang digunakan, dengan 22 bahasa resmi yang diakui konstitusi.</p>
+      <div class="bahasa-list">
+        <div class="bahasa-item">
+          <span class="bahasa-name">Hindi</span>
+          <div class="bahasa-bar-wrap"><div class="bahasa-bar" style="width:44%">44%</div></div>
+        </div>
+        <div class="bahasa-item">
+          <span class="bahasa-name">Bengali</span>
+          <div class="bahasa-bar-wrap"><div class="bahasa-bar" style="width:8%">8%</div></div>
+        </div>
+        <div class="bahasa-item">
+          <span class="bahasa-name">Marathi</span>
+          <div class="bahasa-bar-wrap"><div class="bahasa-bar" style="width:7%">7%</div></div>
+        </div>
+        <div class="bahasa-item">
+          <span class="bahasa-name">Telugu</span>
+          <div class="bahasa-bar-wrap"><div class="bahasa-bar" style="width:7%">7%</div></div>
+        </div>
+        <div class="bahasa-item">
+          <span class="bahasa-name">Tamil</span>
+          <div class="bahasa-bar-wrap"><div class="bahasa-bar" style="width:6%">6%</div></div>
+        </div>
+        <div class="bahasa-item">
+          <span class="bahasa-name">Lainnya</span>
+          <div class="bahasa-bar-wrap"><div class="bahasa-bar other-bar" style="width:28%">28%</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Pembuat</h4>
+        <p>Jason Manuel Simadibrata <br> Reginald Cristoval Surya Pratama <br> Varrel Imannuel Sinaij
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>NRP</h4>
+        <p>2572020 <br> 2572034 <br> 2572040</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 Web Dasar India</p>
+  </footer>
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('open');
+    });
+
+    function filterBudaya(val) {
+      const cards = document.querySelectorAll('.budaya-card');
+      let count = 0;
+      cards.forEach(card => {
+        if (val === 'all' || card.dataset.cat === val) {
+          card.style.display = 'flex';
+          card.style.animation = 'fadeCard 0.4s ease forwards';
+          count++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    const agamaObs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 100);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.agama-item').forEach(el => agamaObs.observe(el));
+
+    const cardObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) e.target.classList.add('visible');
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.budaya-card').forEach(el => cardObs.observe(el));
+  </script>
+</body>
+</html>
