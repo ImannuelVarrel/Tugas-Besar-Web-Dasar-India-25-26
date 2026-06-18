@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz India</title>
+  <link rel="stylesheet" href="css/quiz.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Bebas+Neue&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">🇮🇳 INDIA</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Beranda</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="budaya.html">Budaya</a>
+        <a href="kuliner.html">Kuliner</a>
+        <a href="quiz.html" class="active">Quiz</a>
+        <a href="#footer">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="quiz-main">
+
+    <div class="screen" id="screenStart">
+      <div class="start-card">
+        <div class="start-emoji">🇮🇳</div>
+        <h1>Quiz India</h1>
+        <p>Uji pengetahuanmu tentang India! Terdapat <strong>10 soal pilihan ganda</strong>. Setiap jawaban benar mendapat <strong>10 poin</strong>.</p>
+        <div class="rules-list">
+          <div class="rule-item">📝 10 soal pilihan ganda</div>
+          <div class="rule-item">⏱️ Tidak ada batas waktu</div>
+          <div class="rule-item">🏆 Skor maksimum: 100 poin</div>
+          <div class="rule-item">✅ Pilih 1 jawaban per soal</div>
+        </div>
+        <input type="text" id="playerName" placeholder="Masukkan namamu..." maxlength="30" />
+        <button class="btn-start" onclick="startQuiz()">Mulai Quiz!</button>
+      </div>
+    </div>
+
+    <div class="screen hidden" id="screenQuiz">
+      <div class="quiz-container">
+        <div class="quiz-header">
+          <div class="progress-info">
+            <span id="qCounter">Soal 1 / 10</span>
+            <span id="scoreDisplay">Skor: 0</span>
+          </div>
+          <div class="progress-bar-wrap">
+            <div class="progress-bar" id="progressBar"></div>
+          </div>
+        </div>
+
+        <div class="question-box" id="questionBox">
+          <div class="question-num" id="questionNum">01</div>
+          <h2 class="question-text" id="questionText"></h2>
+        </div>
+
+        <div class="options-grid" id="optionsGrid"></div>
+
+        <div class="quiz-footer-bar">
+          <div class="feedback-msg" id="feedbackMsg"></div>
+          <button class="btn-next hidden" id="btnNext" onclick="nextQuestion()">Soal Berikutnya →</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="screen hidden" id="screenResult">
+      <div class="result-card">
+        <div class="result-emoji" id="resultEmoji">🏆</div>
+        <h1 id="resultTitle">Luar Biasa!</h1>
+        <p id="resultName" class="result-name"></p>
+
+        <div class="score-simple">
+          <span class="score-number" id="finalScore">0</span>
+          <span class="score-divider">/</span>
+          <span class="score-total">100</span>
+        </div>
+
+        <p class="result-feedback" id="resultFeedback"></p>
+
+        <div class="result-breakdown" id="resultBreakdown"></div>
+
+        <div class="result-btns">
+          <button class="btn-retry" onclick="retryQuiz()">🔄 Coba Lagi</button>
+          <a class="btn-home" href="index.html">🏠 Beranda</a>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Pembuat</h4>
+        <p>Jason Manuel Simadibrata <br> Reginald Cristoval Surya Pratama <br> Varrel Imannuel Sinaij
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>NRP</h4>
+        <p>2572020 <br> 2572034 <br> 2572040</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 Web Dasar India</p>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        q: "Apa ibu kota India?",
+        options: ["Mumbai", "Kolkata", "New Delhi", "Chennai"],
+        answer: 2,
+        explanation: "New Delhi adalah ibu kota India sejak tahun 1947."
+      },
+      {
+        q: "Siapakah tokoh yang dikenal sebagai 'Bapak Bangsa India'?",
+        options: ["Jawaharlal Nehru", "Mahatma Gandhi", "Subhas Chandra Bose", "Bhagat Singh"],
+        answer: 1,
+        explanation: "Mahatma Gandhi dikenal sebagai Bapak Bangsa India karena perjuangannya meraih kemerdekaan melalui non-kekerasan."
+      },
+      {
+        q: "India meraih kemerdekaan dari Britania Raya pada tanggal berapa?",
+        options: ["15 Agustus 1945", "26 Januari 1950", "15 Agustus 1947", "1 Januari 1948"],
+        answer: 2,
+        explanation: "India merdeka pada 15 Agustus 1947. Tanggal 26 Januari 1950 adalah Hari Republik India."
+      },
+      {
+        q: "Siapa yang membangun Taj Mahal?",
+        options: ["Akbar", "Babur", "Aurangzeb", "Shah Jahan"],
+        answer: 3,
+        explanation: "Taj Mahal dibangun oleh Shah Jahan untuk mengenang istrinya, Mumtaz Mahal, antara tahun 1632-1653."
+      },
+      {
+        q: "Sungai terpanjang dan paling sakral di India adalah?",
+        options: ["Sungai Yamuna", "Sungai Gangga", "Sungai Brahmaputra", "Sungai Indus"],
+        answer: 1,
+        explanation: "Sungai Gangga (Ganga) adalah sungai terpanjang dan paling sakral di India, mengalir sejauh 2.525 km."
+      },
+      {
+        q: "Agama apa yang dianut oleh mayoritas penduduk India?",
+        options: ["Islam", "Budha", "Hindu", "Sikhisme"],
+        answer: 2,
+        explanation: "Sekitar 80% penduduk India beragama Hindu, menjadikan India negara dengan populasi Hindu terbesar di dunia."
+      },
+      {
+        q: "Nama mata uang resmi India adalah?",
+        options: ["Pound India", "Dollar India", "Rupee India", "Peso India"],
+        answer: 2,
+        explanation: "Mata uang resmi India adalah Rupee India (₹ atau INR), dikeluarkan oleh Reserve Bank of India."
+      },
+      {
+        q: "Konsep matematika apa yang pertama kali dikembangkan oleh ilmuwan India?",
+        options: ["Bilangan Prima", "Konsep Nol (0)", "Kalkulus", "Logaritma"],
+        answer: 1,
+        explanation: "Aryabhata, matematikawan India abad ke-5, mengembangkan konsep angka nol (0) yang kemudian menyebar ke seluruh dunia."
+      },
+      {
+        q: "Festival 'Holi' di India merayakan apa?",
+        options: ["Tahun Baru India", "Datangnya musim semi dan kemenangan kebaikan", "Hari kemerdekaan India", "Festival panen raya"],
+        answer: 1,
+        explanation: "Holi adalah Festival Warna yang merayakan datangnya musim semi dan kemenangan kebaikan atas kejahatan."
+      },
+      {
+        q: "Di negara bagian mana Taj Mahal berada?",
+        options: ["Rajasthan", "Delhi", "Uttar Pradesh", "Maharashtra"],
+        answer: 2,
+        explanation: "Taj Mahal terletak di Kota Agra, Negara Bagian Uttar Pradesh, India."
+      }
+    ];
+
+    let currentQ = 0;
+    let score = 0;
+    let answers = [];
+    let answered = false;
+    let playerName = '';
+
+    function startQuiz() {
+      const nameInput = document.getElementById('playerName').value.trim();
+      if (!nameInput) {
+        const inp = document.getElementById('playerName');
+        inp.style.borderColor = '#ff6b6b';
+        inp.placeholder = 'Nama tidak boleh kosong!';
+        return;
+      }
+      playerName = nameInput;
+      currentQ = 0;
+      score = 0;
+      answers = [];
+      answered = false;
+      showScreen('screenQuiz');
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      answered = false;
+      const q = questions[currentQ];
+      document.getElementById('qCounter').textContent = `Soal ${currentQ + 1} / ${questions.length}`;
+      document.getElementById('scoreDisplay').textContent = `Skor: ${score}`;
+      document.getElementById('questionNum').textContent = String(currentQ + 1).padStart(2, '0');
+      document.getElementById('questionText').textContent = q.q;
+
+      const prog = ((currentQ) / questions.length) * 100;
+      document.getElementById('progressBar').style.width = prog + '%';
+
+      const grid = document.getElementById('optionsGrid');
+      grid.innerHTML = '';
+
+      for (let i = 0; i < q.options.length; i++) {
+        const btn = document.createElement('button');
+        btn.className = 'option-btn';
+        btn.innerHTML = `<span class="opt-letter">${String.fromCharCode(65+i)}</span>${q.options[i]}`;
+        btn.addEventListener('click', function() { selectAnswer(i, this); });
+        grid.appendChild(btn);
+      }
+
+      document.getElementById('feedbackMsg').textContent = '';
+      document.getElementById('feedbackMsg').className = 'feedback-msg';
+      document.getElementById('btnNext').classList.add('hidden');
+    }
+
+    function selectAnswer(selectedIdx, btn) {
+      if (answered) return;
+      answered = true;
+      const q = questions[currentQ];
+      const allBtns = document.querySelectorAll('.option-btn');
+      let isCorrect = false;
+
+      if (selectedIdx === q.answer) {
+        isCorrect = true;
+        score += 10;
+        btn.classList.add('correct');
+      } else {
+        btn.classList.add('wrong');
+        allBtns[q.answer].classList.add('correct');
+      }
+
+      answers.push({ q: currentQ, selected: selectedIdx, correct: q.answer, isCorrect });
+
+      allBtns.forEach(b => b.disabled = true);
+
+      const feedbackEl = document.getElementById('feedbackMsg');
+      if (isCorrect) {
+        feedbackEl.textContent = '✅ Benar! ' + q.explanation;
+        feedbackEl.className = 'feedback-msg correct-msg';
+      } else {
+        feedbackEl.textContent = '❌ Salah. ' + q.explanation;
+        feedbackEl.className = 'feedback-msg wrong-msg';
+      }
+
+      document.getElementById('scoreDisplay').textContent = `Skor: ${score}`;
+      document.getElementById('btnNext').classList.remove('hidden');
+
+      if (currentQ === questions.length - 1) {
+        document.getElementById('btnNext').textContent = 'Lihat Hasil 🏆';
+      } else {
+        document.getElementById('btnNext').textContent = 'Soal Berikutnya →';
+      }
+    }
+
+    function nextQuestion() {
+      currentQ++;
+      if (currentQ < questions.length) {
+        loadQuestion();
+      } else {
+        showResult();
+      }
+    }
+
+    function showResult() {
+      showScreen('screenResult');
+      document.getElementById('progressBar').style.width = '100%';
+      document.getElementById('finalScore').textContent = score;
+      document.getElementById('resultName').textContent = `Hasil untuk: ${playerName}`;
+
+      let emoji, title, feedback;
+      if (score === 100) {
+        emoji = '🏆'; title = 'SEMPURNA!';
+        feedback = 'Luar biasa! Kamu adalah ahli India sejati. Nilai sempurna 100/100!';
+      } else if (score >= 80) {
+        emoji = '🌟'; title = 'Hebat!';
+        feedback = 'Pengetahuanmu tentang India sangat baik! Sedikit lagi mencapai sempurna.';
+      } else if (score >= 60) {
+        emoji = '👍'; title = 'Bagus!';
+        feedback = 'Cukup baik! Pelajari lebih lanjut tentang India untuk meningkatkan nilaimu.';
+      } else if (score >= 40) {
+        emoji = '📚'; title = 'Lumayan!';
+        feedback = 'Masih perlu belajar lebih banyak tentang India. Jangan menyerah!';
+      } else {
+        emoji = '💪'; title = 'Terus Belajar!';
+        feedback = 'Jelajahi website ini lebih dalam untuk belajar tentang India yang menakjubkan!';
+      }
+
+      document.getElementById('resultEmoji').textContent = emoji;
+      document.getElementById('resultTitle').textContent = title;
+      document.getElementById('resultFeedback').textContent = feedback;
+
+      const breakdown = document.getElementById('resultBreakdown');
+      breakdown.innerHTML = '<h3>Rincian Jawaban:</h3>';
+      for (let i = 0; i < answers.length; i++) {
+        const a = answers[i];
+        const div = document.createElement('div');
+        div.className = 'breakdown-item ' + (a.isCorrect ? 'bk-correct' : 'bk-wrong');
+        div.innerHTML = `<span class="bk-icon">${a.isCorrect ? '✅' : '❌'}</span><span class="bk-text">Soal ${i+1}: ${a.isCorrect ? 'Benar (+10)' : 'Salah (+0)'}</span>`;
+        breakdown.appendChild(div);
+      }
+    }
+
+    function retryQuiz() {
+      currentQ = 0;
+      score = 0;
+      answers = [];
+      answered = false;
+      showScreen('screenStart');
+      document.getElementById('playerName').value = '';
+    }
+
+    function showScreen(id) {
+      document.querySelectorAll('.screen').forEach(s => s.classList.add('hidden'));
+      document.getElementById(id).classList.remove('hidden');
+    }
+
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('open');
+    });
+
+    document.getElementById('playerName').addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') startQuiz();
+    });
+  </script>
+</body>
+</html>

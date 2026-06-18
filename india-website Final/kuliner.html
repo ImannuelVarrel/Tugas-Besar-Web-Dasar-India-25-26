@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kuliner India</title>
+  <link rel="stylesheet" href="css/kuliner.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;900&family=Merriweather:ital,wght@0,400;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="index.html">🇮🇳 INDIA</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu">&#9776;</button>
+      <nav class="nav" id="navMenu">
+        <a href="index.html">Beranda</a>
+        <a href="sejarah.html">Sejarah</a>
+        <a href="budaya.html">Budaya</a>
+        <a href="kuliner.html" class="active">Kuliner</a>
+        <a href="quiz.html">Quiz</a>
+        <a href="#footer">Kontak</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="spice-particles" id="spiceParticles"></div>
+    <div class="page-hero-content">
+      <h1>KULINER INDIA</h1>
+      <p>Ledakan Rasa, Warna & Aroma dari Negeri Rempah</p>
+    </div>
+  </section>
+
+  <section class="spice-intro">
+    <div class="container">
+      <div class="spice-grid">
+        <div class="spice-text">
+          <h2>Rahasia Cita Rasa India</h2>
+          <p>Masakan India dikenal di seluruh dunia karena penggunaan rempah-rempah yang kaya dan beragam. Setiap hidangan adalah perpaduan sempurna antara bumbu, tekstur, dan warna yang menciptakan pengalaman kuliner tak terlupakan.</p>
+          <div class="spice-tags">
+            <span>🌶️ Cabai</span>
+            <span>🟡 Kunyit</span>
+            <span>🌱 Ketumbar</span>
+            <span>⭐ Jinten</span>
+            <span>🔴 Paprika</span>
+            <span>🍃 Kayu Manis</span>
+            <span>🫚 Kapulaga</span>
+            <span>🌰 Pala</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="menu-section">
+    <div class="container">
+      <h2 class="section-title">Hidangan Ikonik India</h2>
+      <div class="menu-tabs">
+        <button class="tab-btn active" onclick="showTab('utama', this)">Makanan Utama</button>
+        <button class="tab-btn" onclick="showTab('jajanan', this)">Jajanan & Snack</button>
+        <button class="tab-btn" onclick="showTab('minuman', this)">Minuman</button>
+        <button class="tab-btn" onclick="showTab('dessert', this)">Dessert</button>
+      </div>
+
+      <div class="tab-content active" id="tab-utama">
+        <div class="food-grid">
+          <div class="food-card">
+            <img src="img/biryani.jpeg" alt="Biryani" />
+            <div class="food-info">
+              <div class="food-header">
+                <h3>Biryani</h3>
+                <span class="spice-level">🌶️🌶️</span>
+              </div>
+              <p>Nasi berbumbu rempah yang dimasak bersama daging ayam, kambing, atau seafood. Salah satu hidangan paling ikonik India dengan variasi di setiap daerah.</p>
+              <div class="food-meta">
+                <span>🕐 60–90 menit</span>
+                <span>🌍 Mughal origin</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card">
+            <img src="img/butter chicken.jpeg" alt="Butter Chicken" />
+            <div class="food-info">
+              <div class="food-header">
+                <h3>Butter Chicken</h3>
+                <span class="spice-level">🌶️</span>
+              </div>
+              <p>Ayam berbumbu dalam saus tomat creamy berbasis mentega dan krim. Hidangan yang paling digemari wisatawan mancanegara saat berkunjung ke India.</p>
+              <div class="food-meta">
+                <span>🕐 45 menit</span>
+                <span>🌍 Punjab, India Utara</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card">
+            <img src="img/rogan josh.jpeg" alt="Rogan Josh" />
+            <div class="food-info">
+              <div class="food-header">
+                <h3>Rogan Josh</h3>
+                <span class="spice-level">🌶️🌶️🌶️</span>
+              </div>
+              <p>Kari daging kambing khas Kashmir yang kaya rempah dengan warna merah menggoda dari cabai Kashmiri dan paprika. Hidangan istimewa dari utara India.</p>
+              <div class="food-meta">
+                <span>🕐 90 menit</span>
+                <span>🌍 Kashmir</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="food-card">
+            <img src="img/palak paneer.jpeg" alt="Palak Paneer" />
+            <div class="food-info">
+              <div class="food-header">
+                <h3>Palak Paneer</h3>
+                <span class="spice-level">🌶️</span>
+              </div>
+              <p>Keju segar (paneer) dalam saus bayam berbumbu yang creamy. Hidangan vegetarian yang kaya nutrisi dan favorit di seluruh India.</p>
+              <div class="food-meta">
+                <span>🕐 30 menit</span>
+                <span>🌍 India Utara</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-jajanan">
+        <div class="food-grid">
+          <div class="food-card">
+            <img src="img/samosa.jpeg" alt="Samosa" />
+            <div class="food-info">
+              <div class="food-header"><h3>Samosa</h3><span class="spice-level">🌶️</span></div>
+              <p>Pastri goreng segitiga berisi kentang berbumbu, kacang polong, dan kadang daging. Jajanan paling populer di India, tersedia di setiap sudut kota.</p>
+              <div class="food-meta"><span>🕐 45 menit</span><span>🌍 India Utara</span></div>
+            </div>
+          </div>
+          <div class="food-card">
+            <img src="img/pani puri.jpeg" alt="Pani Puri" />
+            <div class="food-info">
+              <div class="food-header"><h3>Pani Puri</h3><span class="spice-level">🌶️🌶️</span></div>
+              <p>Kulit tipis renyah diisi dengan campuran kentang, kacang, dan air asam pedas beraroma mint. Jajanan jalanan yang menggugah selera!</p>
+              <div class="food-meta"><span>🕐 30 menit</span><span>🌍 Seluruh India</span></div>
+            </div>
+          </div>
+          <div class="food-card">
+            <img src="img/vada pav.jpeg" alt="Vada Pav" />
+            <div class="food-info">
+              <div class="food-header"><h3>Vada Pav</h3><span class="spice-level">🌶️🌶️</span></div>
+              <p>Disebut "burger India", berupa roti pav berisi bola kentang berbumbu yang digoreng. Makanan jalanan ikonik dari kota Mumbai.</p>
+              <div class="food-meta"><span>🕐 30 menit</span><span>🌍 Mumbai, Maharashtra</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-minuman">
+        <div class="food-grid">
+          <div class="food-card">
+            <img src="img/masala chai.jpeg" alt="Masala Chai" />
+            <div class="food-info">
+              <div class="food-header"><h3>Masala Chai</h3><span class="spice-level">☕</span></div>
+              <p>Teh susu berbumbu dengan jahe, kapulaga, kayu manis, dan cengkeh. Minuman nasional India yang menghangatkan, diminum di setiap waktu sepanjang hari.</p>
+              <div class="food-meta"><span>🕐 10 menit</span><span>🌍 Seluruh India</span></div>
+            </div>
+          </div>
+          <div class="food-card">
+            <img src="img/mango lassi.jpeg" alt="Mango Lassi" />
+            <div class="food-info">
+              <div class="food-header"><h3>Mango Lassi</h3><span class="spice-level">🥭</span></div>
+              <p>Minuman yogurt berbasis mangga yang menyegarkan. Paduan sempurna antara segar, manis, dan sedikit asam. Pelengkap sempurna hidangan pedas India.</p>
+              <div class="food-meta"><span>🕐 5 menit</span><span>🌍 Punjab</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="tab-dessert">
+        <div class="food-grid">
+          <div class="food-card">
+            <img src="img/gulab jamun.jpeg" alt="Gulab Jamun" />
+            <div class="food-info">
+              <div class="food-header"><h3>Gulab Jamun</h3><span class="spice-level">🍯</span></div>
+              <p>Bola susu kental yang digoreng lalu direndam dalam sirup gula beraroma mawar dan kapulaga. Dessert paling populer di anak benua India.</p>
+              <div class="food-meta"><span>🕐 40 menit</span><span>🌍 Seluruh India</span></div>
+            </div>
+          </div>
+          <div class="food-card">
+            <img src="img/jalebi.jpeg" alt="Jalebi" />
+            <div class="food-info">
+              <div class="food-header"><h3>Jalebi</h3><span class="spice-level">🍯</span></div>
+              <p>Adonan spiral renyah yang digoreng dan dicelup dalam sirup gula. Berwarna oranye cerah dan sangat manis, biasa dimakan saat festival.</p>
+              <div class="food-meta"><span>🕐 30 menit</span><span>🌍 India & Asia Selatan</span></div>
+            </div>
+          </div>
+          <div class="food-card">
+            <img src="img/rasgulla.jpeg" alt="Rasgulla" />
+            <div class="food-info">
+              <div class="food-header"><h3>Rasgulla</h3><span class="spice-level">🍯</span></div>
+              <p>Bola keju cottage lembut yang dimasak dalam sirup gula ringan. Dessert khas Bengal Barat, terkenal dengan tekstur spons yang kenyal dan lembut.</p>
+              <div class="food-meta"><span>🕐 45 menit</span><span>🌍 Bengal Barat</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="resep-section">
+    <div class="container">
+      <h2 class="section-title">Coba Resep Sederhana</h2>
+      <details class="resep-box">
+        <summary class="resep-header">
+          <h3>🍛 Masala Chai - Teh Rempah India</h3>
+          <span class="resep-toggle">▼ Lihat Resep</span>
+        </summary>
+        <div class="resep-body">
+          <div class="resep-inner">
+            <div class="resep-col">
+              <h4>Bahan-bahan (2 porsi):</h4>
+              <ul>
+                <li>400 ml air</li>
+                <li>200 ml susu segar</li>
+                <li>2 kantong teh hitam (atau 2 sdt daun teh)</li>
+                <li>2 cm jahe, dimemarkan</li>
+                <li>3 butir kapulaga, dimemarkan</li>
+                <li>1 batang kayu manis</li>
+                <li>2 cengkeh</li>
+                <li>Gula secukupnya</li>
+              </ul>
+            </div>
+            <div class="resep-col">
+              <h4>Cara Membuat:</h4>
+              <ol>
+                <li>Didihkan air bersama semua rempah selama 5 menit.</li>
+                <li>Masukkan teh dan masak 3 menit lagi.</li>
+                <li>Tambahkan susu dan gula, aduk rata.</li>
+                <li>Masak hingga mendidih kecil sambil terus diaduk.</li>
+                <li>Saring dan tuang ke cangkir. Sajikan panas!</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <footer class="site-footer" id="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <h4>Pembuat</h4>
+        <p>Jason Manuel Simadibrata <br> Reginald Cristoval Surya Pratama <br> Varrel Imannuel Sinaij
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>NRP</h4>
+        <p>2572020 <br> 2572034 <br> 2572040</p>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2026 Web Dasar India</p>
+  </footer>
+
+
+  <script>
+    document.getElementById('hamburger').addEventListener('click', () => {
+      document.getElementById('navMenu').classList.toggle('open');
+    });
+
+    function showTab(tabId, btn) {
+      document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.getElementById('tab-' + tabId).classList.add('active');
+      btn.classList.add('active');
+    }
+  </script>
+</body>
+</html>
